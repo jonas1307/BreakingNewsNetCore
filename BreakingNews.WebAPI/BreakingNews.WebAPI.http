@@ -1,0 +1,6 @@
+@BreakingNews.WebAPI_HostAddress = https://localhost:44332
+
+GET {{BreakingNews.WebAPI_HostAddress}}/api/v1/WeatherForecast/
+Accept: application/json
+
+###
