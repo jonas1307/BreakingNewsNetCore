@@ -8,7 +8,7 @@ namespace BreakingNews.Application.Utils
     [ExcludeFromCodeCoverage]
     public static class RepositoryServiceCollectionExtensions
     {
-        public static IServiceCollection AddRepositoryServices(this IServiceCollection services)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             // Services DI
             services.AddScoped(typeof(IBaseService<,>), typeof(BaseService<,>));
