@@ -5,10 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 
-namespace BreakingNews.Repository.Utils
+namespace BreakingNews.Repository.Extensions
 {
     [ExcludeFromCodeCoverage]
-    public static class RepositoryServiceCollectionExtensions
+    public static class ServiceCollectionExtension
     {
         public static IServiceCollection AddRepositoryServices(this IServiceCollection services, IConfiguration configuration)
         {

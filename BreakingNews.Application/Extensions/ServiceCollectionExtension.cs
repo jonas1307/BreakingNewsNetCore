@@ -3,10 +3,10 @@ using BreakingNews.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 
-namespace BreakingNews.Application.Utils
+namespace BreakingNews.Application.Extensions
 {
     [ExcludeFromCodeCoverage]
-    public static class RepositoryServiceCollectionExtensions
+    public static class ServiceCollectionExtension
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
