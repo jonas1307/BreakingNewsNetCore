@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BreakingNews.IntegrationTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BreakingNews.Application", "BreakingNews.Application\BreakingNews.Application.csproj", "{82D8B7F0-67C4-4DEB-9AA2-62A53E3818BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakingNews.WebAPI", "BreakingNews.WebAPI\BreakingNews.WebAPI.csproj", "{D251E2D6-E13E-40ED-9720-69BE3F30D8A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BreakingNews.WebAPI", "BreakingNews.WebAPI\BreakingNews.WebAPI.csproj", "{D251E2D6-E13E-40ED-9720-69BE3F30D8A7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{73AABE4B-867B-4540-ACF9-B6EA7BDC4E12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{D251E2D6-E13E-40ED-9720-69BE3F30D8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D251E2D6-E13E-40ED-9720-69BE3F30D8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D251E2D6-E13E-40ED-9720-69BE3F30D8A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73AABE4B-867B-4540-ACF9-B6EA7BDC4E12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AABE4B-867B-4540-ACF9-B6EA7BDC4E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AABE4B-867B-4540-ACF9-B6EA7BDC4E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AABE4B-867B-4540-ACF9-B6EA7BDC4E12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

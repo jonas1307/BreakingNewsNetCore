@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  breakingnews.webapi:
+    image: ${DOCKER_REGISTRY-}breakingnewswebapi
+    build:
+      context: .
+      dockerfile: BreakingNews.WebAPI/Dockerfile
+  breakingnews.postgresql:
+    image: postgres:15.4
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - "C:/containers/postgresql-breaking-news:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_USER: breakingnews-app-user
+      POSTGRES_PASSWORD: TACfAo8RoGtv1jK6
+      POSTGRES_DB: BreakingNews
+  breakingnews.adminer:
+    image: adminer:4
+    restart: always
+    ports:
+      - 8080:8080
