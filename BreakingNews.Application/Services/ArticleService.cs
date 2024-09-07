@@ -23,9 +23,9 @@ namespace BreakingNews.Application.Services
             return _mapper.Map<IEnumerable<ArticleDTO>>(await _articleRepository.GetAllAsync());
         }
 
-        public new async Task<Article> GetByIdAsync(Guid id)
+        public new async Task<ArticleDTO> GetByIdAsync(Guid id)
         {
-            return _mapper.Map<Article>(await _articleRepository.GetByIdAsync(id));
+            return _mapper.Map<ArticleDTO>(await _articleRepository.GetByIdAsync(id));
         }
 
         public async Task<ArticleDTO> AddAsync(ArticleDTO dto)
@@ -37,9 +37,9 @@ namespace BreakingNews.Application.Services
             return _mapper.Map<ArticleDTO>(await _articleRepository.AddAsync(article));
         }
 
-        public async Task<Article> GetBySlug(string slug)
+        public async Task<ArticleDTO> GetBySlug(string slug)
         {
-            return await _articleRepository.GetBySlug(slug);
+            return _mapper.Map<ArticleDTO>(await _articleRepository.GetBySlug(slug));
         }
     }
 }

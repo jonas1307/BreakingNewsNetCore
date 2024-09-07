@@ -7,7 +7,7 @@ namespace BreakingNews.Application.Interfaces
     {
         Task<ArticleDTO> AddAsync(ArticleDTO article);
         new Task<IEnumerable<ArticleDTO>> GetAllAsync();
-        Task<Article> GetByIdAsync(Guid id);
-        Task<Article> GetBySlug(string slug);
+        Task<ArticleDTO> GetByIdAsync(Guid id);
+        Task<ArticleDTO> GetBySlug(string slug);
     }
 }
