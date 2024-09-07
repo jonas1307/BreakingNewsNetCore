@@ -18,7 +18,11 @@ namespace BreakingNews.Application.Services
             _mapper = mapper;
         }
 
-        public async Task AddAsync(CreateArticleDTO dto)
+        public new async Task<IEnumerable<ArticleDTO>> GetAllAsync()
+        {
+            return _mapper.Map<IEnumerable<ArticleDTO>>(await _articleRepository.GetAllAsync());
+        }
+
         public async Task AddAsync(ArticleDTO dto)
         {
             var article = _mapper.Map<Article>(dto);

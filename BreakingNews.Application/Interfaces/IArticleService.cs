@@ -6,6 +6,7 @@ namespace BreakingNews.Application.Interfaces
     public interface IArticleService : IBaseService<Article, Guid>
     {
         Task AddAsync(ArticleDTO article);
+        new Task<IEnumerable<ArticleDTO>> GetAllAsync();
         Task<Article> GetBySlug(string slug);
     }
 }
