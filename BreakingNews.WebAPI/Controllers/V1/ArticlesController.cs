@@ -43,5 +43,35 @@ namespace BreakingNews.WebAPI.Controllers.V1
 
             return CreatedAtAction(nameof(GetById), new { id = newArticle.Id }, newArticle);
         }
+
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] ArticleDTO dto)
+        {
+            var article = await _articleService.GetByIdAsync(id);
+
+            if (article == null)
+            {
+                return NotFound();
+            }
+
+            await _articleService.UpdateAsync(id, dto);
+
+            return AcceptedAtAction(nameof(GetById), new { id }, null);
+        }
+
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var article = await _articleService.GetByIdAsync(id);
+
+            if (article == null)
+            {
+                return NotFound();
+            }
+
+            await _articleService.DeleteAsync(id);
+
+            return AcceptedAtAction(nameof(GetById), new { id }, null);
+        }
     }
 }

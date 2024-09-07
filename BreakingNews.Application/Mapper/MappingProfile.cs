@@ -9,7 +9,9 @@ namespace BreakingNews.Application.Mapper
         public MappingProfile()
         {
             CreateMap<Article, ArticleDTO>();
-            CreateMap<ArticleDTO, Article>();
+            
+            CreateMap<ArticleDTO, Article>()
+                .ForMember(x => x.Id, y => y.Ignore());
         }
     }
 }

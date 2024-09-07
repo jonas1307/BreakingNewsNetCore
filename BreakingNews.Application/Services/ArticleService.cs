@@ -41,5 +41,12 @@ namespace BreakingNews.Application.Services
         {
             return _mapper.Map<ArticleDTO>(await _articleRepository.GetBySlug(slug));
         }
+
+        public async Task UpdateAsync(Guid id, ArticleDTO dto)
+        {
+            var article = await _articleRepository.GetByIdAsync(id);
+
+            await _articleRepository.UpdateAsync(_mapper.Map(dto, article));
+        }
     }
 }
