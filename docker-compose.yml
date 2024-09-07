@@ -6,6 +6,10 @@ services:
     build:
       context: .
       dockerfile: BreakingNews.WebAPI/Dockerfile
+    depends_on:
+      - breakingnews.postgresql
+    networks:
+      - breakingnews-network
   breakingnews.postgresql:
     image: postgres:15.4
     restart: always
@@ -17,8 +21,18 @@ services:
       POSTGRES_USER: breakingnews-app-user
       POSTGRES_PASSWORD: TACfAo8RoGtv1jK6
       POSTGRES_DB: BreakingNews
+    networks:
+      - breakingnews-network
   breakingnews.adminer:
     image: adminer:4
     restart: always
     ports:
       - 8080:8080
+    depends_on:
+      - breakingnews.postgresql
+    networks:
+      - breakingnews-network
+
+networks:
+  breakingnews-network:
+    driver: bridge
