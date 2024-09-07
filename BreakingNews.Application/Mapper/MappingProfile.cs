@@ -8,8 +8,8 @@ namespace BreakingNews.Application.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<Article, CreateArticleDTO>();
-            CreateMap<CreateArticleDTO, Article>();
+            CreateMap<Article, ArticleDTO>();
+            CreateMap<ArticleDTO, Article>();
         }
     }
 }

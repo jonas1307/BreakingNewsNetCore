@@ -19,6 +19,7 @@ namespace BreakingNews.Application.Services
         }
 
         public async Task AddAsync(CreateArticleDTO dto)
+        public async Task AddAsync(ArticleDTO dto)
         {
             var article = _mapper.Map<Article>(dto);
 

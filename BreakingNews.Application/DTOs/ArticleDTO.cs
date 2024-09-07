@@ -1,7 +1,8 @@
 ﻿namespace BreakingNews.Application.DTOs
 {
-    public class CreateArticleDTO
+    public class ArticleDTO
     {
+        public Guid Id { get; set; }
         public string Title { get; set; }
         public string Summary { get; set; }
         public string Author { get; set; }
