@@ -28,13 +28,13 @@ namespace BreakingNews.Application.Services
             return _mapper.Map<Article>(await _articleRepository.GetByIdAsync(id));
         }
 
-        public async Task AddAsync(ArticleDTO dto)
+        public async Task<ArticleDTO> AddAsync(ArticleDTO dto)
         {
             var article = _mapper.Map<Article>(dto);
 
             article.ChangeStatus(ArticleStatus.Drafted);
 
-            await _articleRepository.AddAsync(article);
+            return _mapper.Map<ArticleDTO>(await _articleRepository.AddAsync(article));
         }
 
         public async Task<Article> GetBySlug(string slug)

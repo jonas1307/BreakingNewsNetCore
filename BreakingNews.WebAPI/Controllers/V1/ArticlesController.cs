@@ -1,4 +1,5 @@
 ﻿using Asp.Versioning;
+using BreakingNews.Application.DTOs;
 using BreakingNews.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,6 +34,14 @@ namespace BreakingNews.WebAPI.Controllers.V1
             }
 
             return Ok(article);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] ArticleDTO article)
+        {
+            var newArticle = await _articleService.AddAsync(article);
+
+            return CreatedAtAction(nameof(GetById), new { id = newArticle.Id }, newArticle);
         }
     }
 }
