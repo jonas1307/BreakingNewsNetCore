@@ -23,6 +23,11 @@ namespace BreakingNews.Application.Services
             return _mapper.Map<IEnumerable<ArticleDTO>>(await _articleRepository.GetAllAsync());
         }
 
+        public new async Task<Article> GetByIdAsync(Guid id)
+        {
+            return _mapper.Map<Article>(await _articleRepository.GetByIdAsync(id));
+        }
+
         public async Task AddAsync(ArticleDTO dto)
         {
             var article = _mapper.Map<Article>(dto);

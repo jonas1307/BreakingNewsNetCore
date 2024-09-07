@@ -21,5 +21,18 @@ namespace BreakingNews.WebAPI.Controllers.V1
         {
             return Ok(await _articleService.GetAllAsync());
         }
+
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var article = await _articleService.GetByIdAsync(id);
+
+            if (article == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(article);
+        }
     }
 }
